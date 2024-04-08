@@ -15,11 +15,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var overviewTextView: UITextView!
     @IBOutlet weak var voteLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
-
+    @IBOutlet weak var favoriteButton: UIButton!
     // TODO: Add favorite button outlet
 
     // TODO: Add favorite button action
 
+    @IBAction func didTapFavoriteButton(_ sender: UIButton) {
+        // Set the button's isSelected state to the opposite of it's current value.
+        sender.isSelected = !sender.isSelected
+    }
     var movie: Movie!
 
     override func viewDidLoad() {
@@ -45,6 +49,9 @@ class DetailViewController: UIViewController {
         titleLabel.text = movie.title
         overviewTextView.text = movie.overview
 
+        // Set the button's corner radius to be 1/2  it's width. This will make a square button round.
+        favoriteButton.layer.cornerRadius = favoriteButton.frame.width / 2
+        
         // Unwrap the optional vote average
         if let voteAverage = movie.voteAverage {
 
