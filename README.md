@@ -1,4 +1,4 @@
-## Lab 6: Flix Detail
+## Lab 6: Favorites-Tab
 
 ### Overview
 
